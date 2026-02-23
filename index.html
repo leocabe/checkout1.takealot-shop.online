@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+  <script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  async
+  defer>
+</script>
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout - Delivery Details</title>
@@ -255,12 +261,20 @@ openPayment.onclick = ()=>{
   },3000);
 }
 completePurchase.onclick = () => {
-  window.location.href = "https://app.quorapay.online/pay/99945dcf-d85b-46e1-8658-84ca63cf8f5a";
+
+  const params = window.location.search;
+
+  const checkoutURL =
+    "https://app.quorapay.online/pay/99945dcf-d85b-46e1-8658-84ca63cf8f5a";
+
+  window.location.href = checkoutURL + (params ? params : "");
+
 };
 </script>
 
 </body>
 </html>
+
 
 
 
